@@ -49,6 +49,10 @@ sudo dnf install -y bibata-cursor-themes
 
 
 #NVIDIA wayland
+#verificar se é wayland ou x11
+echo $XDG_SESSION_TYPE
+
+
 dnf install xorg-x11-server-Xwayland libxcb egl-wayland
 
 # edit grub /etc/default/grub
@@ -74,21 +78,35 @@ mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nvidia-nomodeset.
 ## Create new initramfs image ##
 dracut /boot/initramfs-$(uname -r).img $(uname -r)
 
-
+# precisa sair r voltar  ao terminal
+# e executar como usuário normal para verificar se 'kms-modifiers' está ativo
+gsettings get org.gnome.mutter experimental-features
+# então executar
 gsettings set org.gnome.mutter experimental-features [\"kms-modifiers\"]
 
 
 
 reboot
 
+# to change hostname
+nano /etc/hostname
+# type the desired name and done
+
+# check fully updated installation
+lsb_release -a 
+# yes pra tudo
 
 
 
 
 
+# para verificar
+nvidia-installer -v 
+echo $XDG_SESSION_TYPE #deve retornar 'wayland'
 
-
-
+watch -n1 nvidia-smi
+# e verificar se processes tem programas que estão usando memoria gpu
+# movimentar janelas deve aumentar gpu usage 
 
 
 
