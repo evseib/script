@@ -15,7 +15,7 @@ sudo fwupdmgr update
 
 sudo dnf install -y @base-x gnome-shell gnome-terminal nautilus firefox
 sudo systemctl set-default graphical.target
-sudo dnf install -y gnome-software chrome-gnome-shell gnome-tweaks @development-tools gnome-extensions-app
+sudo dnf install -y gnome-software net-tools chrome-gnome-shell gnome-tweaks @development-tools gnome-extensions-app
 
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
