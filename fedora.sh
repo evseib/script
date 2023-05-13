@@ -7,6 +7,7 @@
 #skip_if_unavailable=True
 #max_parallel_downloads=10
 #fastestmirror=True
+#defaultyes=True
 
 sudo fwupdmgr get-devices 
 sudo fwupdmgr refresh --force 
