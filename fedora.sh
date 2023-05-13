@@ -37,6 +37,9 @@ sudo dnf copr enable peterwu/rendezvous
 sudo dnf install -y bibata-cursor-themes
 
 
+# instalar NVIDIA
+# https://www.if-not-true-then-false.com/2015/fedora-nvidia-guide/
+
 
 #NVIDIA wayland
 #verificar se é wayland ou x11
