@@ -45,7 +45,7 @@ sudo dnf install -y bibata-cursor-themes
 # e/ou
 # https://www.pling.com/p/1214931/?ref=itsfoss.com
 
-
+#https://extensions.gnome.org/extension/1503/tray-icons/
 
 
 # instalar NVIDIA
