@@ -2,6 +2,8 @@
 sudo echo "max_parallel_downloads=20" >> /etc/dnf/dnf.conf 
 sudo echo "fastestmirror=True" >> /etc/dnf/dnf.conf 
 sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf 
+sudo echo "alias 'll=ls -la --color=auto'" >> ~/.bashrc
+
 
 # sudo fwupdmgr get-devices 
 # sudo fwupdmgr refresh --force 
