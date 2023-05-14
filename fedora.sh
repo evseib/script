@@ -17,8 +17,9 @@ sudo fwupdmgr update
 sudo dnf install -y xorg-x11-server-Xwayland libxcb egl-wayland gnome-shell gnome-terminal nautilus xdg-user-dirs xdg-user-dirs-gtk 
 sudo systemctl set-default graphical.target
 
-sudo dnf group -y install "Hardware Support"
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf group -y install "Hardware Support"
+
 sudo dnf install -y gnome-software net-tools gnome-tweaks @development-tools gnome-extensions-app
 sudo dnf install -y vlc steam btop gnome-system-monitor file-roller firefox gnome-terminal-nautilus gparted ffmpegthumbnailer gnome-browser-connector
 
@@ -28,10 +29,10 @@ sudo dnf -y groupupdate sound-and-video
 sudo dnf config-manager --set-enabled fedora-cisco-openh264
 sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
 sudo dnf install -y fira-code-fonts 'mozilla-fira*' 'google-roboto*' 
-sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig
+sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig kitty
 
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-sudo dnf install -y unzip p7zip p7zip-plugins unrar qbittorrent dnf-plugins-core fedora-workstation-repositories papirus-icon-theme
+sudo dnf install -y unzip p7zip p7zip-plugins unrar qbittorrent dnf-plugins-core fedora-workstation-repositories papirus-icon-theme gnome-weather
 
 sudo dnf copr enable peterwu/rendezvous
 sudo dnf install -y bibata-cursor-themes
@@ -42,10 +43,17 @@ sudo dnf install -y bibata-cursor-themes
 # extensions.gnome.org/extension/19/user-themes
 # na pasta ~/.themes instalar os arquivos -> descomprimir com tar xf arquivo
 # https://www.pling.com/p/1357889?ref=itsfoss.com
-# e/ou
-# https://www.pling.com/p/1214931/?ref=itsfoss.com
 
-#https://extensions.gnome.org/extension/2890/tray-icons-reloaded
+
+
+# https://github.com/vinceliuice/Tela-icon-theme
+# 
+
+
+
+# https://extensions.gnome.org/extension/2890/tray-icons-reloaded
+# https://extensions.gnome.org/extension/5090/space-bar
+
 
 
 # instalar NVIDIA
