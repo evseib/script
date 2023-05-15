@@ -46,7 +46,7 @@ sudo dnf install -y bibata-cursor-themes
 # https://extensions.gnome.org/extension/2890/tray-icons-reloaded
 # https://extensions.gnome.org/extension/5090/space-bar
 # https://extensions.gnome.org/extension/5446/quick-settings-tweaker/
-
+# https://extensions.gnome.org/extension/307/dash-to-dock/
 
 # instalar NVIDIA
 
