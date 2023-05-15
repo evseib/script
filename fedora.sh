@@ -13,7 +13,7 @@ sudo echo "alias 'll=ls -la --color=auto'" >> ~/.bashrc
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 sudo dnf install -y xorg-x11-server-Xwayland libxcb egl-wayland gnome-shell gnome-terminal nautilus xdg-user-dirs xdg-user-dirs-gtk 
-sudo systemctl set-default graphical.target
+# sudo systemctl set-default graphical.target  # faz isso depois de instalar os drivers nvidia
 
 sudo dnf group -y install "Hardware Support"
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
@@ -51,11 +51,13 @@ sudo dnf install -y bibata-cursor-themes
 # instalar NVIDIA
 
 # sudo dnf update -y # and reboot if you are not on the latest kernel
-sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda 
+
+# reiniciar antes daqui
+# sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda 
 
 
 
-
+sudo systemctl set-default graphical.target
 
 
 
