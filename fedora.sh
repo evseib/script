@@ -35,110 +35,34 @@ sudo dnf install -y bibata-cursor-themes
 # na pasta ~/.themes instalar os arquivos -> descomprimir com tar xf arquivo
 # https://www.pling.com/p/1357889?ref=itsfoss.com
 
-# talvez - testar
-# sudo dnf install dnf5 dnf5-plugins
-
-
 # https://github.com/vinceliuice/Tela-icon-theme
 # 
-
-
 # https://extensions.gnome.org/extension/2890/tray-icons-reloaded
 # https://extensions.gnome.org/extension/5090/space-bar
 # https://extensions.gnome.org/extension/5446/quick-settings-tweaker/
 # https://extensions.gnome.org/extension/307/dash-to-dock/
 
+
 # instalar NVIDIA
-
 # sudo dnf update -y # and reboot if you are not on the latest kernel
-
 # reiniciar antes daqui
 # sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda 
 
-
-
-sudo systemctl set-default graphical.target
-
+# sudo systemctl set-default graphical.target
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#NVIDIA wayland
-#verificar se é wayland ou x11
-#echo $XDG_SESSION_TYPE
-
-# edit grub /etc/default/grub
-## Example row with Fedora 38/37/36 BTRFS ##
-#GRUB_CMDLINE_LINUX="rhgb quiet rd.driver.blacklist=nouveau nvidia-drm.modeset=1"
-## OR with LVM ##
-#GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/swap rd.lvm.lv=fedora/root rhgb quiet rd.driver.blacklist=nouveau nvidia-drm.modeset=1"
-
-
-## BIOS and UEFI ##
-#grub2-mkconfig -o /boot/grub2/grub.cfg
-
-
-#Update /usr/lib/udev/rules.d/61-gdm.rules on Fedora 38/37/36
-#Comment line 
-#ENV{NVIDIA_PRESERVE_VIDEO_MEMORY_ALLOCATIONS}!=“1”, GOTO=“gdm_disable_wayland”
-
-
-# generate initramfs
-## Backup old initramfs nvidia-nomodeset image ##
-#sudo mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nvidia-nomodeset.img
- 
-## Create new initramfs image ##
-#dracut /boot/initramfs-$(uname -r).img $(uname -r)
-
-# precisa sair r voltar  ao terminal
-# e executar como usuário normal para verificar se 'kms-modifiers' está ativo -> responde apenas "@as []"
-#gsettings get org.gnome.mutter experimental-features
-# então executar
-#gsettings set org.gnome.mutter experimental-features [\"kms-modifiers\"]
-
-
-
-#reboot
 
 # to change hostname
 #nano /etc/hostname
 # type the desired name and done
 
-# check fully updated installation
-#lsb_release -a 
-# yes pra tudo
 
-
-
-
-
-# para verificar
+# para verificar instalação nvidia
 #nvidia-installer -v 
 #echo $XDG_SESSION_TYPE #deve retornar 'wayland'
 
 #watch -n1 nvidia-smi
 # e verificar se processes tem programas que estão usando memoria gpu
 # movimentar janelas deve aumentar gpu usage 
-
-
-
-
 
