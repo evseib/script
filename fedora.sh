@@ -1,32 +1,33 @@
+# executar como root
 #cat /etc/dnf/dnf.conf 
-sudo echo "max_parallel_downloads=20" >> /etc/dnf/dnf.conf 
-sudo echo "fastestmirror=True" >> /etc/dnf/dnf.conf 
-sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf 
-sudo echo "alias 'll=ls -la --color=auto'" >> ~/.bashrc
-
+echo "max_parallel_downloads=20" >> /etc/dnf/dnf.conf 
+echo "fastestmirror=True" >> /etc/dnf/dnf.conf 
+echo "defaultyes=True" >> /etc/dnf/dnf.conf 
+echo "alias 'll=ls -la --color=auto'" >> ~/.bashrc
+echo "alias 'll=ls -la --color=auto'" >> /etc/bashrc
 
 # sudo fwupdmgr get-devices 
 # sudo fwupdmgr refresh --force 
 # sudo fwupdmgr get-updates 
 # sudo fwupdmgr update
 
-sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf install -y xorg-x11-server-Xwayland libxcb egl-wayland gnome-shell gnome-terminal nautilus xdg-user-dirs xdg-user-dirs-gtk 
+dnf install -y xorg-x11-server-Xwayland libxcb egl-wayland gnome-shell gnome-terminal nautilus xdg-user-dirs xdg-user-dirs-gtk 
 # sudo systemctl set-default graphical.target  # faz isso depois de instalar os drivers nvidia
 
-sudo dnf group -y install "Hardware Support"
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-sudo dnf config-manager --set-enabled fedora-cisco-openh264
+dnf group -y install "Hardware Support"
+rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+dnf config-manager --set-enabled fedora-cisco-openh264
 
-sudo dnf install -y gnome-software net-tools gnome-tweaks @development-tools gnome-extensions-app vlc steam btop gnome-system-monitor file-roller firefox gnome-terminal-nautilus gparted ffmpegthumbnailer gnome-browser-connector
-sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,ugly-*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
-sudo dnf -y groupupdate sound-and-video
+dnf install -y gnome-software net-tools gnome-tweaks @development-tools gnome-extensions-app vlc steam btop gnome-system-monitor file-roller firefox gnome-terminal-nautilus gparted ffmpegthumbnailer gnome-browser-connector
+dnf install -y gstreamer1-plugins-{bad-*,good-*,ugly-*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
+dnf -y groupupdate sound-and-video
 
-sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264 fira-code-fonts 'mozilla-fira*' 'google-roboto*' curl cabextract xorg-x11-font-utils fontconfig kitty unzip p7zip p7zip-plugins unrar qbittorrent dnf-plugins-core fedora-workstation-repositories papirus-icon-theme hydrapaper 
+dnf install -y gstreamer1-plugin-openh264 mozilla-openh264 fira-code-fonts 'mozilla-fira*' 'google-roboto*' curl cabextract xorg-x11-font-utils fontconfig kitty unzip p7zip p7zip-plugins unrar qbittorrent dnf-plugins-core fedora-workstation-repositories papirus-icon-theme hydrapaper 
 
-sudo dnf copr enable peterwu/rendezvous
-sudo dnf install -y bibata-cursor-themes
+dnf copr enable peterwu/rendezvous
+dnf install -y bibata-cursor-themes
 
 
 # TEMAS 
@@ -44,9 +45,9 @@ sudo dnf install -y bibata-cursor-themes
 
 
 # instalar NVIDIA
-# sudo dnf update -y # and reboot if you are not on the latest kernel
+# dnf update -y # and reboot if you are not on the latest kernel
 # reiniciar antes daqui
-# sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda 
+# dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda 
 
 # sudo systemctl set-default graphical.target
 
